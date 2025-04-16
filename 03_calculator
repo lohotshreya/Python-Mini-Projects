@@ -1,0 +1,52 @@
+import tkinter as tk
+window = tk.Tk()
+window.title("Calculator")
+window.geometry("300x400")
+window.config(bg="#090C08")
+
+entry = tk.Entry(window, width=20, font=("Arial", 20), border=2, relief="groove", justify="right")
+entry.pack(pady=20)
+
+def click(symbol):
+    current = entry.get()
+    entry.delete(0, tk.END)
+    entry.insert(0, current + str(symbol))
+
+def clear():
+    entry.delete(0, tk.END)
+
+def calculate():
+    try:
+        result = eval(entry.get())
+        entry.delete(0, tk.END)
+        entry.insert(0, str(result))
+    except:
+        entry.delete(0, tk.END)
+        entry.insert(0, "Error")
+
+button_frame = tk.Frame(window, bg="#090C08")
+button_frame.pack()
+
+buttons = [
+    ('7', '8', '9', '/'),
+    ('4', '5', '6', '*'),
+    ('1', '2', '3', '-'),
+    ('C', '0', '=', '+')
+]
+
+for row in buttons:
+    row_frame = tk.Frame(button_frame, bg="#FFF9F3")
+    row_frame.pack()
+    for symbol in row:
+        action = lambda x=symbol: calculate() if x == '=' else clear() if x == 'C' else click(x)
+        tk.Button(row_frame,
+                  text=symbol,
+                  width=5,
+                  height=2,
+                  font=("Arial", 16),
+                  bg="#8B0000",  # wine red
+                  fg="white",
+                  command=action
+                  ).pack(side="left", padx=5, pady=5)
+
+window.mainloop()
