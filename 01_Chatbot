@@ -1,0 +1,157 @@
+import pyttsx3
+import pyjokes
+import random
+
+# Initialize TTS Engine
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)  # Female voice
+engine.setProperty('rate', 200)
+
+def speak(text):
+    print("Donna: " + text)
+    engine.say(text)
+    engine.runAndWait()
+
+def tell_joke():
+    joke = pyjokes.get_joke()
+    speak(joke)
+
+def give_advice():
+    tips = [
+        "Stop overthinking. You're not that important.",
+        "Fake it till you make it. Or until someone finds out.",
+        "Multitasking: because doing one thing badly just isn’t enough.",
+        "Hydrate. Then dominate.",
+        "Confidence looks good on you. So does a full 8 hours of sleep.",
+        "You're doing amazing. Or at least convincing people you are.",
+        "Procrastinating? Same. Let's both pretend we're working.",
+        "If you're not obsessed with your life, change it.",
+        "Take a break. You're not a machine. Even though I technically am.",
+    ]
+    advice = random.choice(tips)
+    speak(advice)
+
+def give_therapy():
+    responses = [
+        "It’s okay to feel down sometimes. You’re allowed to take a break, it doesn’t make you weak.",
+        "Just breathe. Life's a marathon, not a sprint. You’ve got this.",
+        "You're not broken, you're just not the person you thought you'd be.",
+        "You’ve made it through 100% of your worst days so far. You’re stronger than you think.",
+        "Sometimes you have to make a choice that’s hard, but it’s necessary.",
+        "Take a deep breath. You’re doing the best you can, and that’s enough.",
+        "The only way out is through. Don’t run away from your challenges.",
+        "Success isn’t about being better than anyone else. It’s about being better than you were yesterday.",
+        "Being strong doesn’t mean you’re never afraid. It means you keep going, even when you are.",
+                "Hey, I know things might be tough right now, but remember, tough times don’t last, but tough people do.",
+        "It’s okay to feel down sometimes. You’re allowed to take a break, it doesn’t make you weak.",
+        "Just breathe. Life's a marathon, not a sprint. You’ve got this.",
+        "Sometimes we just need to step back and reflect. Take it slow, you'll figure it out.",
+        "It’s okay to not have all the answers. Life’s about learning and growing, and you're doing just that.",
+        "Take a deep breath. You’re doing the best you can, and that’s enough.",
+        "You’ve made it through 100% of your worst days so far. You’re stronger than you think.",
+        "Remember, even diamonds are made under pressure. You’re getting stronger with every challenge.",
+        "No one has it all figured out. Just keep moving forward, one step at a time.",
+        "Don’t be too hard on yourself. Every small progress counts, even if you don’t see it yet.",
+        "You’ve got to own it, even when it’s hard to do.",
+        "The truth is, no one really knows what they’re doing.",
+        "You’re not broken, you’re just not the person you thought you’d be.",
+        "Stop overthinking. You’re making it harder than it needs to be",
+        "You can’t keep holding on to people who don’t hold on to you.",
+        "The most important thing is not where you start, it’s where you end up.",
+        "Sometimes, you have to choose between what’s right and what’s easy.",
+        "It’s not about doing what’s right, it’s about doing what’s best for you.",
+        "When you’re unsure, trust yourself. If you don’t, no one else will.",
+        "If you want something, go for it. There’s no perfect time.",
+        "In the end, you’ll only regret the chances you didn’t take.",
+        "Don’t worry about the people who don’t support you. They’re not part of your future.",
+        "You have to stop waiting for the perfect moment and just start.",
+        "People will forget what you said, but they’ll remember how you made them feel.",
+        "You can’t control everything, but you can control how you respond.",
+        "Never let anyone tell you who you are. You are who you choose to be.",
+        "You can’t make a big impact if you’re afraid to make mistakes.",
+        "If you don’t respect yourself, no one else will.",
+        "The world isn’t perfect, and neither are you. Embrace it.",
+        "If you want to get to the top, you have to be willing to leave some people behind.",
+        "Sometimes the best way to get ahead is to take a step back and look at the bigger picture.",
+        "You need to learn to accept things you can’t control.",
+        "You’ll never be able to please everyone. Please yourself.",
+        "Sometimes you have to make a choice that’s hard, but it’s necessary.",
+        "You don’t always need to have all the answers. Sometimes, the question is enough.",
+        "It’s not about the mistakes you’ve made. It’s about how you bounce back from them.",
+        "Success isn’t about being better than anyone else. It’s about being better than you were yesterday.",
+        "Confidence is built on knowing your worth, not waiting for someone else to tell you.",
+        "The only way out is through. Don’t run away from your challenges.",
+        "Being strong doesn’t mean you’re never afraid. It means you keep going, even when you are.",
+        "You can’t build an empire by playing it safe.",
+        "If you’re not uncomfortable, you’re not growing.",
+        "Success isn’t about having all the answers, it’s about being brave enough to ask the questions.",
+        "You can either live your life in fear or you can take the leap and trust that you’ll land.",
+        "You deserve happiness, but you also have to work for it.",
+        "Don’t be afraid to stand out. The best things in life are always different.",
+        "Sometimes, you have to walk away from something good to find something great.",
+        "The only thing stopping you is you. Don’t let fear get in your way."
+    ]
+    therapy = random.choice(responses)
+    speak(therapy)
+
+def give_roast():
+    roasts = [
+        "Are you sure you're not just a walking meme?",
+        "You’ve got the perfect face for radio.",
+        "You must’ve been born on a highway, because that’s where most accidents happen.",
+        "I'm not saying you're weird, but even your imaginary friends ghosted you.",
+        "You're like a cloud. When you disappear, it's a beautiful day.",
+        "You know, I’d roast you, but I’m afraid I’d burn myself.",
+        "If I had a dollar for every smart thing you said, I'd be broke.",
+        "You bring everyone so much joy... when you leave the room.",
+    ]
+    roast = random.choice(roasts)
+    speak(roast)
+
+# INTRO
+def greet_user():
+    speak("Hey, I'm Donna. Your virtual assistant, therapist, clown, and occasional hater.")
+    speak("So, what's up with you today? Feeling good, bad, or meh?")
+
+def mood_check(mood):
+    mood = mood.lower()
+    if any(word in mood for word in ["happy", "good", "fine", "lol", "great"]):
+        speak("Yesss queen! Love that vibe. Wanna hear a joke or some advice to keep the streak going?")
+    elif any(word in mood for word in ["sad", "bad", "depressed", "tired", "down", "not okay", "lonely"]):
+        speak("Ugh, life’s a rollercoaster huh? I gotchu. Wanna talk or hear something motivating?")
+    elif any(word in mood for word in ["angry", "annoyed", "pissed", "frustrated"]):
+        speak("Oof. Who do we need to fight? Or do you want me to roast someone for you?")
+    else:
+        speak("Hmm, mysterious energy detected. Wanna chat anyway?")
+
+# MAIN LOOP
+def main():
+    greet_user()
+    mood = input("You: ")
+    mood_check(mood)
+
+    while True:
+        user_input = input("You: ").lower()
+
+        if user_input in ["joke", "make me laugh", "funny"]:
+            tell_joke()
+
+        elif user_input in ["advice", "tip", "motivate me", "life tips"]:
+            give_advice()
+
+        elif user_input in ["help", "i'm sad", "therapy", "i need help", "comfort me"]:
+            give_therapy()
+
+        elif user_input in ["roast me", "roast", "shut up", "you're dumb"]:
+            give_roast()
+
+        elif user_input in ["bye", "exit", "quit", "gtg", "see ya"]:
+            speak("Alright, talk to you later, loser! Just kidding. Or am I?")
+            break
+
+        else:
+            speak("Hmm, not sure how to respond to that. Try asking for a joke, advice, or just say 'hi'.")
+            
+# Execute it!
+main()
