@@ -8,7 +8,7 @@ These projects focus on logic building, user interaction, and clean code structu
 
 ## 📁 Projects Included
 
-### 01️⃣ Chatbot
+### 1️⃣ Chatbot
 A simple rule-based chatbot that responds to user inputs.
 
 **Concepts used:**
@@ -18,7 +18,7 @@ A simple rule-based chatbot that responds to user inputs.
 
 ---
 
-### 02️⃣ Rock Paper Scissors
+### 2️⃣ Rock Paper Scissors
 A classic Rock–Paper–Scissors game played against the computer.
 
 **Concepts used:**
@@ -28,7 +28,7 @@ A classic Rock–Paper–Scissors game played against the computer.
 
 ---
 
-### 03️⃣ Calculator
+### 3️⃣ Calculator
 A basic calculator supporting arithmetic operations.
 
 **Concepts used:**
@@ -38,7 +38,7 @@ A basic calculator supporting arithmetic operations.
 
 ---
 
-### 04️⃣ Number Guessing Game
+### 4️⃣ Number Guessing Game
 The computer randomly selects a number and the user guesses until correct.
 
 **Concepts used:**
@@ -48,8 +48,8 @@ The computer randomly selects a number and the user guesses until correct.
 
 ---
 
-### 05️⃣ To-Do List (CLI)
-A command-line based to-do list application.
+### 5️⃣ To-Do List (CLI)
+A command-line-based to-do list application.
 
 **Features:**
 - Add tasks
@@ -63,7 +63,7 @@ A command-line based to-do list application.
 
 ---
 
-### 06️⃣ Password Strength Checker
+### 6️⃣ Password Strength Checker
 Checks whether a password is weak, medium, or strong.
 
 **Concepts used:**
