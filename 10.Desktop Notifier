@@ -1,0 +1,28 @@
+import time
+from plyer import notification
+
+def set_reminder():
+    title = input("What is the reminder for? (Title): ")
+    message = input("Enter the message: ")
+    try:
+        seconds = int(input("Alert after how many seconds? "))
+    except ValueError:
+        print("Please enter a valid number of seconds.")
+        return
+
+    print(f"Reminder set! I will notify you in {seconds} seconds.")
+    
+    # Wait for the specified time
+    time.sleep(seconds)
+
+    # Trigger the desktop notification
+    notification.notify(
+        title = title,
+        message = message,
+        app_name = "Python Notifier",
+        timeout = 10  # Notification stays for 10 seconds
+    )
+    print("Notification sent.")
+
+if __name__ == "__main__":
+    set_reminder()
