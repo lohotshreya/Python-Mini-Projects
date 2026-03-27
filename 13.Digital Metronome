@@ -1,0 +1,29 @@
+import time
+
+def metronome():
+    print("--- CLI Metronome ---")
+    try:
+        bpm = int(input("Enter Beats Per Minute (e.g., 120): "))
+        beats = int(input("How many beats to play? (0 for infinite): "))
+    except ValueError:
+        print("Invalid input.")
+        return
+
+    interval = 60.0 / bpm
+    count = 0
+
+    print(f"Starting metronome at {bpm} BPM. Press Ctrl+C to stop.")
+    
+    try:
+        while beats == 0 or count < beats:
+            # \a triggers the system 'alert' bell sound
+            print(f"Beat {count % 4 + 1}", end='\r')
+            print('\a', end='', flush=True) 
+            
+            time.sleep(interval)
+            count += 1
+    except KeyboardInterrupt:
+        print("\nMetronome stopped.")
+
+if __name__ == "__main__":
+    metronome()
