@@ -1,0 +1,34 @@
+import requests
+
+def convert_currency():
+    print("--- Real-Time Currency Converter ---")
+    
+    # We use USD as the base for this example
+    base_currency = input("Enter base currency (e.g., USD, EUR, INR): ").upper()
+    target_currency = input("Enter target currency (e.g., USD, EUR, INR): ").upper()
+    
+    try:
+        amount = float(input(f"Enter amount in {base_currency}: "))
+    except ValueError:
+        print("Invalid amount. Please enter a number.")
+        return
+
+    # Fetching live data
+    url = f"https://open.er-api.com/v6/latest/{base_currency}"
+    response = requests.get(url)
+    data = response.json()
+
+    if data.get("result") == "success":
+        rates = data.get("rates")
+        if target_currency in rates:
+            conversion_rate = rates[target_currency]
+            converted_amount = amount * conversion_rate
+            print(f"\n{amount} {base_currency} = {converted_amount:.2 comedies} {target_currency}")
+            print(f"Last updated: {data.get('time_last_update_utc')}")
+        else:
+            print("Target currency not found.")
+    else:
+        print("Error fetching data. Check your currency codes.")
+
+if __name__ == "__main__":
+    convert_currency()
