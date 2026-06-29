@@ -46,9 +46,9 @@ def main():
     print("--- 🌦️ Welcome to the Python Weather App ---")
     
     # Replace this string with your actual OpenWeatherMap API key
-    API_KEY = "586ddcb392a7ac603f5681d66eeffdff" 
+    API_KEY = "YOUR_API_KEY_HERE" 
     
-    if API_KEY == "586ddcb392a7ac603f5681d66eeffdff":
+    if API_KEY == "YOUR_API_KEY_HERE":
         print("\n[Notice] Please replace 'YOUR_API_KEY_HERE' in the code with a real OpenWeatherMap key to run this successfully.")
     
     while True:
