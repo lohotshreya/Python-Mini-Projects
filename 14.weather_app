@@ -1,0 +1,66 @@
+import requests
+
+def get_weather(city, api_key):
+    # Base URL for the OpenWeatherMap Current Weather Data API
+    base_url = "http://api.openweathermap.org/data/2.5/weather"
+    
+    # Query parameters
+    params = {
+        "q": city,
+        "appid": api_key,
+        "units": "metric"  # Fetches temperature in Celsius
+    }
+    
+    try:
+        response = requests.get(base_url, params=params)
+        # Raise an exception for HTTP errors (like 404 or 401)
+        response.raise_for_status()
+        
+        # Parse the JSON response
+        data = response.json()
+        
+        # Extract specific data fields
+        city_name = data["name"]
+        country = data["sys"]["country"]
+        temp = data["main"]["temp"]
+        humidity = data["main"]["humidity"]
+        description = data["weather"][0]["description"].capitalize()
+        
+        # Display the formatted weather report
+        print(f"\n🌍 Weather Report for {city_name}, {country}:")
+        print(f"🌡️  Temperature: {temp}°C")
+        print(f"💧 Humidity: {humidity}%")
+        print(f"☁️  Condition: {description}")
+        
+    except requests.exceptions.HTTPError as http_err:
+        if response.status_code == 404:
+            print("❌ City not found. Please check the spelling.")
+        elif response.status_code == 401:
+            print("❌ Invalid API Key. Please check your OpenWeatherMap key.")
+        else:
+            print(f"❌ HTTP error occurred: {http_err}")
+    except Exception as err:
+        print(f"❌ An error occurred: {err}")
+
+def main():
+    print("--- 🌦️ Welcome to the Python Weather App ---")
+    
+    # Replace this string with your actual OpenWeatherMap API key
+    API_KEY = "586ddcb392a7ac603f5681d66eeffdff" 
+    
+    if API_KEY == "586ddcb392a7ac603f5681d66eeffdff":
+        print("\n[Notice] Please replace 'YOUR_API_KEY_HERE' in the code with a real OpenWeatherMap key to run this successfully.")
+    
+    while True:
+        city = input("\nEnter city name (or type 'exit' to quit): ").strip()
+        if city.lower() == 'exit':
+            print("Goodbye!")
+            break
+        if not city:
+            print("City name cannot be empty.")
+            continue
+            
+        get_weather(city, API_KEY)
+
+if __name__ == "__main__":
+    main()
