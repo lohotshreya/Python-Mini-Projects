@@ -1,0 +1,82 @@
+import json
+import os
+
+FILE_NAME = "expenses.json"
+
+def load_expenses():
+    """Loads expenses from the JSON file. Creates one if it doesn't exist."""
+    if not os.path.exists(FILE_NAME):
+        return []
+    try:
+        with open(FILE_NAME, "r") as file:
+            return json.load(file)
+    except json.JSONDecodeError:
+        return []
+
+def save_expenses(expenses):
+    """Saves the current expenses list back to the JSON file."""
+    with open(FILE_NAME, "w") as file:
+        json.dump(expenses, file, indent=4)
+
+def add_expense(expenses):
+    print("\n--- 📝 Add New Expense ---")
+    category = input("Enter category (e.g., Food, Transport, Rent): ").strip().capitalize()
+    
+    try:
+        amount = float(input("Enter amount: "))
+        if amount <= 0:
+            print("❌ Amount must be greater than zero.")
+            return
+    except ValueError:
+        print("❌ Invalid number format.")
+        return
+        
+    description = input("Enter description/notes: ").strip()
+    
+    expense = {
+        "category": category,
+        "amount": amount,
+        "description": description
+    }
+    
+    expenses.append(expense)
+    save_expenses(expenses)
+    print("✅ Expense logged successfully!")
+
+def view_expenses(expenses):
+    print("\n--- 📊 Logged Expenses ---")
+    if not expenses:
+        print("No expenses recorded yet.")
+        return
+        
+    total = 0
+    for idx, exp in enumerate(expenses, 1):
+        print(f"{idx}. [{exp['category']}] ${exp['amount']:.2f} - {exp['description']}")
+        total += exp['amount']
+    
+    print("-" * 30)
+    print(f"💰 Total Spending: ${total:.2f}")
+
+def main():
+    expenses = load_expenses()
+    
+    while True:
+        print("\n--- 🪙 Personal Expense Tracker ---")
+        print("1. Add Expense")
+        print("2. View All Expenses & Summary")
+        print("3. Exit")
+        
+        choice = input("Choose an option (1-3): ").strip()
+        
+        if choice == "1":
+            add_expense(expenses)
+        elif choice == "2":
+            view_expenses(expenses)
+        elif choice == "3":
+            print("Exiting Expense Tracker. Stay on budget!")
+            break
+        else:
+            print("❌ Invalid option. Please select 1, 2, or 3.")
+
+if __name__ == "__main__":
+    main()
