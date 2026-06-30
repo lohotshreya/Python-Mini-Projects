@@ -1,0 +1,33 @@
+import re
+
+def convert_md_line(line):
+    # Convert Headings (# Header -> <h1>Header</h1>)
+    line = re.sub(r'^### (.*?)$', r'<h3>\1</h3>', line)
+    line = re.sub(r'^## (.*?)$', r'<h2>\1</h2>', line)
+    line = re.sub(r'^# (.*?)$', r'<h1>\1</h1>', line)
+    
+    # Convert Bold Text (**text** -> <strong>text</strong>)
+    line = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', line)
+    
+    return line
+
+def process_file(input_file, output_file):
+    try:
+        with open(input_file, 'r') as md, open(output_file, 'w') as html:
+            html.write("<!DOCTYPE html>\n<html>\n<body>\n")
+            for line in md:
+                stripped = line.strip()
+                if stripped:
+                    converted = convert_md_line(stripped)
+                    html.write(f"  {converted}\n")
+            html.write("</body>\n</html>")
+        print(f"✅ Converted successfully! Output file: {output_file}")
+    except FileNotFoundError:
+        print("❌ Source markdown file not found.")
+
+if __name__ == "__main__":
+    # Create sample file for verification
+    with open("sample.md", "w") as f:
+        f.write("# Hello World\nThis is a **Python converted** page.\n## Subtitle")
+        
+    process_file("sample.md", "index.html")
