@@ -1,0 +1,41 @@
+import time
+
+def print_slow(text):
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(0.02)
+    print()
+
+def intro():
+    print_slow("\nYou wake up on a damp stone floor. The air smells like ancient dust.")
+    print_slow("In front of you are two heavy doors: a rusty IRON door and an old OAK door.")
+    
+    choice = input("\nWhich door do you choose? (iron / oak): ").strip().lower()
+    if choice == "iron":
+        iron_room()
+    elif choice == "oak":
+        oak_room()
+    else:
+        print_slow("Indecision paralyzes you. A trapdoor opens beneath you! Game Over.")
+
+def iron_room():
+    print_slow("\nThe iron door screeches open. Inside, a sleeping dragon rests on gold!")
+    choice = input("Do you try to SNEAK past or RUN back? (sneak / run): ").strip().lower()
+    
+    if choice == "sneak":
+        print_slow("\nYou move like a shadow, grab a handful of gold, and find a hidden exit. You Win!")
+    else:
+        print_slow("\nThe noise wakes the dragon. It inhales deeply... flame engulfs you. Game Over.")
+
+def oak_room():
+    print_slow("\nThe oak door opens to a bright library. A wizard sits at a desk reading.")
+    choice = input("Do you GREET the wizard or SEARCH the bookshelves? (greet / search): ").strip().lower()
+    
+    if choice == "greet":
+        print_slow("\nThe wizard smiles and teleports you safely outside to safety with a sack of gems. You Win!")
+    else:
+        print_slow("\nA cursed book jumps off the shelf and traps your soul inside its pages. Game Over.")
+
+if __name__ == "__main__":
+    print("=== ⚔️ The Dungeon of Logic ⚔️ ===")
+    intro()
