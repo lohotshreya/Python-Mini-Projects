@@ -1,0 +1,28 @@
+import smtplib
+import ssl
+import os
+
+def send_alert_email():
+    # Recommended setup: Fetch credentials using local Environment Variables 
+    sender_email = os.environ.get("EMAIL_USER", "your_email@gmail.com")
+    password = os.environ.get("EMAIL_PASS", "your_app_password")  # Google App Password
+    receiver_email = "receiver_test@example.com"
+    
+    message = """\
+Subject: Python System Automated Notification
+
+Hello, This is an automated diagnostic test message sent directly from Python script execution context."""
+
+    context = ssl.create_default_context()
+    print("Attempting connection to SMTP transport relay...")
+    
+    try:
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message)
+        print("🚀 Email dispatched successfully without failure blocks!")
+    except Exception as e:
+        print(f"❌ Auth or connection matrix failure: {e}")
+
+if __name__ == "__main__":
+    send_alert_email()
