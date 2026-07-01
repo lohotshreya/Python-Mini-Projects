@@ -1,0 +1,24 @@
+from collections import Counter
+import re
+
+def analyze_string(text_data):
+    # Normalize string data: downcase and remove syntactic artifacts
+    clean_text = re.sub(r'[^\w\s]', '', text_data.lower())
+    words = clean_text.split()
+    
+    # Filter common structural noise components (stop words)
+    stop_words = {'the', 'and', 'a', 'to', 'of', 'in', 'is', 'it', 'that', 'with', 'for'}
+    filtered_words = [w for w in words if w not in stop_words]
+    
+    # Calculate distributions
+    word_count = Counter(filtered_words)
+    
+    print(f"📊 Total word extraction volume (filtered): {len(words)}")
+    print(f"🔑 Unique metadata terms cataloged: {len(word_count)}")
+    print("\n🔥 Top 3 most frequent tokens:")
+    for word, count in word_count.most_common(3):
+        print(f" -> '{word}': {count} repetitions")
+
+if __name__ == "__main__":
+    sample_paragraph = "Data infrastructure engineering processes data frames. Python makes optimization clean, and pipeline engineering processes simpler."
+    analyze_string(sample_paragraph)
