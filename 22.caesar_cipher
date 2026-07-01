@@ -1,0 +1,26 @@
+def caesar_cipher(text, shift, mode='encrypt'):
+    result = ""
+    # Enforce decryption inverse transformation
+    if mode == 'decrypt':
+        shift = -shift
+        
+    for char in text:
+        if char.isalpha():
+            start_offset = ord('A') if char.isupper() else ord('a')
+            # Perform modular loop across standard 26 character alphabet space
+            transformed = chr((ord(char) - start_offset + shift) % 26 + start_offset)
+            result += transformed
+        else:
+            result += char # Retain formatting artifacts like spaces/punctuations
+    return result
+
+if __name__ == "__main__":
+    secret_message = "Data Pipeline SecOps 2026!"
+    key_shift = 4
+    
+    encrypted = caesar_cipher(secret_message, key_shift, mode='encrypt')
+    decrypted = caesar_cipher(encrypted, key_shift, mode='decrypt')
+    
+    print(f"🔓 Base String: {secret_message}")
+    print(f"🔒 Cipher Output: {encrypted}")
+    print(f"🔄 Integrity Restoration Test: {decrypted}")
