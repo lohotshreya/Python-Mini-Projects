@@ -1,0 +1,20 @@
+import time
+
+def run_timer(seconds_count):
+    print(f"⏳ Countdown initialized for {seconds_count} seconds:")
+    
+    while seconds_count:
+        # Extract breakdown minutes and seconds cleanly
+        mins, secs = divmod(seconds_count, 60)
+        # Format layout into classic clock styling text block
+        timer_display = f"{mins:02d}:{secs:02d}"
+        
+        # Print string on the same terminal line using carriage return formatting
+        print(timer_display, end="\r", flush=True)
+        time.sleep(1)
+        seconds_count -= 1
+        
+    print("⏰ 00:00 - Time is up! Target interval expired successfully.\n")
+
+if __name__ == "__main__":
+    run_timer(5) # Evaluates a short 5-second test case automatically
