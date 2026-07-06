@@ -1,0 +1,27 @@
+import itertools
+
+def unscramble_word(jumbled_word):
+    # Embedded local structural base tracking array (Zero file modifications needed)
+    valid_dictionary = {"python", "code", "logic", "script", "data", "file", "stack", "server"}
+    
+    # Clean target word adjustments
+    jumbled_word = jumbled_word.lower().strip()
+    
+    # Generate all possible letter ordering combinations
+    permutations = set("".join(p) for p in itertools.permutations(jumbled_word))
+    
+    # Match combinations against dictionary arrays
+    matches = permutations.intersection(valid_dictionary)
+    return matches
+
+if __name__ == "__main__":
+    scrambled_input = "tyhnop" # unscrambles to python
+    print(f"🔍 Scrambled token input: '{scrambled_input}'")
+    print("Matching possibilities against local core glossary definitions...")
+    
+    discovered_words = unscramble_word(scrambled_input)
+    
+    if discovered_words:
+        print(f"🎉 Valid words found: {list(discovered_words)}")
+    else:
+        print("❌ No matching standard library dictionary tokens identified.")
