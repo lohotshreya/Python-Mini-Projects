@@ -95,6 +95,30 @@ Analyzes large paragraphs or text files to count word distributions, find struct
 An algorithmic implementation to encrypt and decrypt basic text messages by shifting characters down the alphabet.
 * **Concepts used:** Modular arithmetic, ASCII byte conversions (`ord()`, `chr()`), String transformations
 
+### 2️⃣3️⃣ International Space Station (ISS) Tracker
+Pulls live location coordination frames tracking the exact geospatial positioning of the ISS orbiting overhead.
+* **Concepts used:** API requests, Loop-driven background polling, Data structural parsing
+
+### 2️⃣4️⃣ Fake Profile Generator
+Connects directly to safe open mockup endpoints to dynamically construct realistic, unauthenticated client database profiles for software testing.
+* **Concepts used:** Network requests, Clean terminal format compilation, Handling anonymous JSON arrays
+
+### 2️⃣5️⃣ Markdown Link Extractor
+Scans through documents to cleanly extract and surface hidden hyperlink arrays embedded inside structural markdown boundaries.
+* **Concepts used:** Advanced string patterns, String pattern filtering, `re.findall()` logic
+
+### 2️⃣6️⃣ Typing Speed Test
+Calculates keyboard typing execution metrics, showing individual tracking accuracy alongside Words-Per-Minute (WPM) scoring calculations.
+* **Concepts used:** `time` subtraction models, Precise execution intervals, Algorithmic evaluations
+
+### 2️⃣7️⃣ Word Unscrambler (Anagram Solver)
+Deciphers jumbled scrambles of text arrays and instantly cross-checks possible combinations against matching definitions.
+* **Concepts used:** `itertools.permutations`, Set comparison logic, Modular combinatorial mathematics
+
+### 2️⃣8️⃣ Countdown Timer & Alarm
+A command-line terminal clock tool managing uniform, cascading second countdown intervals with real-time screen display clearing.
+* **Concepts used:** Python line rewriting flags (`\r`), Dynamic mathematical breakdowns (`divmod()`), Blocking loops
+
 ---
 
 ## 🎯 Purpose
@@ -105,9 +129,9 @@ An algorithmic implementation to encrypt and decrypt basic text messages by shif
 
 ## 🚀 Tech Stack & Setup
 * **Language:** Python 3
-* **Built-in Standard Libraries:** `random`, `time`, `json`, `csv`, `tkinter`, `os`, `re`, `smtplib`, `ssl`, `collections`
-* **External Dependencies:** `requests`, `qrcode`, `plyer`, `beautifulsoup4`
+* **Built-in Standard Libraries:** `random`, `time`, `json`, `csv`, `tkinter`, `os`, `re`, `smtplib`, `ssl`, `collections`, `itertools`
+* **External Dependencies:** `requests`, `qrcode`, `plyer`, `beautifulsoup4`, `pillow`
 
-To install all external packages at once, run:
+To install all required external packages across the collection at once, run:
 ```bash
 pip install requests qrcode plyer beautifulsoup4 pillow
