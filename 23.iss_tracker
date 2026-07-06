@@ -1,0 +1,28 @@
+import requests
+import time
+
+def track_space_station():
+    # Public tracking API - requires absolutely no access key tokens
+    url = "http://api.open-notify.org/iss-now.json"
+    
+    print("🛰️ Tracking International Space Station Real-time Coordinates...")
+    print("Press Ctrl+C to terminate tracking program pipeline.\n")
+    
+    try:
+        for _ in range(5): # Tracks for 5 iterations automatically
+            response = requests.get(url)
+            response.raise_for_status()
+            data = response.json()
+            
+            position = data["iss_position"]
+            lat = position["latitude"]
+            lon = position["longitude"]
+            
+            print(f"⏰ [Timestamp: {data['timestamp']}] Current Orbit Position: Latitude: {lat} | Longitude: {lon}")
+            time.sleep(3) # Safe interval poll constraint
+            
+    except Exception as e:
+        print(f"❌ Connection pipeline failure: {e}")
+
+if __name__ == "__main__":
+    track_space_station()
