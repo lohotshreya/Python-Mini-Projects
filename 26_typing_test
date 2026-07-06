@@ -1,0 +1,33 @@
+import time
+
+def run_typing_test():
+    sample_text = "python programming drives automated optimization models smoothly"
+    
+    print("⚡ --- Quick Console Typing Evaluation --- ⚡")
+    print("Type the text below accurately, then press ENTER instantly:\n")
+    print(f"👉 '{sample_text}'\n")
+    
+    input("Press ENTER when you are ready to begin...")
+    print("\n🏁 START RUNNING!")
+    
+    start_time = time.time()
+    user_input = input(">> ")
+    end_time = time.time()
+    
+    # Calculate intervals
+    elapsed_time = end_time - start_time
+    
+    # Accuracy string calculation logic
+    if user_input.strip() == sample_text:
+        word_count = len(sample_text.split())
+        minutes = elapsed_time / 60
+        wpm = word_count / minutes if minutes > 0 else 0
+        
+        print(f"\n✅ 100% Match Verified!")
+        print(f"⏱️ Time Taken: {elapsed_time:.2f} seconds")
+        print(f"📊 Speed Score: {wpm:.1f} WPM (Words Per Minute)")
+    else:
+        print("\n❌ Input mismatch error detected. Typos invalidating scoring speed results.")
+
+if __name__ == "__main__":
+    run_typing_test()
