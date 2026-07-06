@@ -1,0 +1,26 @@
+import re
+
+def extract_markdown_links(file_content):
+    # Regex formula matching markdown link structures: [text](url)
+    link_pattern = r'\[([^\]]+)\]\((https?://[^\)]+)\)'
+    
+    matches = re.findall(link_pattern, file_content)
+    return matches
+
+if __name__ == "__main__":
+    # Self-contained layout logic string (No external file adjustments needed from your end)
+    mock_markdown_document = """
+    # Project Documentation Directory
+    Welcome to our [GitHub Core Repository](https://github.com/example/repo).
+    Check resource indexes via [Python Engine](https://www.python.org) or lookup dependencies 
+    using the [Package Tracker Portal](https://pypi.org).
+    """
+    
+    print("📝 Scanning document stream for URL references...")
+    found_links = extract_markdown_links(mock_markdown_document)
+    
+    if not found_links:
+        print("No matches isolated.")
+    else:
+        for index, (text, url) in enumerate(found_links, 1):
+            print(f"{index}. Anchor Text: '{text}' -> Link Target: {url}")
