@@ -1,0 +1,34 @@
+import requests
+
+def generate_mock_profile():
+    # Public open-source endpoint requiring zero authentication tokens
+    url = "https://randomuser.me/api/"
+    
+    print("🎲 Connecting to mock identity database stream...")
+    
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        raw_data = response.json()
+        
+        user_info = raw_data["results"][0]
+        
+        # Parse data streams cleanly
+        fullname = f"{user_info['name']['first']} {user_info['name']['last']}"
+        gender = user_info['gender']
+        email = user_info['email']
+        country = user_info['location']['country']
+        city = user_info['location']['city']
+        
+        print("\n====================================")
+        print(f"👤 FULL NAME : {fullname}")
+        print(f"⚧ GENDER    : {gender.capitalize()}")
+        print(f"📍 LOCATION  : {city}, {country}")
+        print(f"📧 EMAIL     : {email}")
+        print("====================================")
+        
+    except Exception as e:
+        print(f"❌ Identity parsing failed: {e}")
+
+if __name__ == "__main__":
+    generate_mock_profile()
