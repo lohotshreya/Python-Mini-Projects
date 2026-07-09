@@ -1,0 +1,26 @@
+def compress_string(input_text):
+    if not input_text:
+        return ""
+        
+    compressed_result = []
+    current_char = input_text[0]
+    character_count = 1
+    
+    # Run-length compression evaluation logic loop
+    for char in input_text[1:]:
+        if char == current_char:
+            character_count += 1
+        else:
+            compressed_result.append(f"{current_char}{character_count}")
+            current_char = char
+            character_count = 1
+    compressed_result.append(f"{current_char}{character_count}")
+    
+    return "".join(compressed_result)
+
+if __name__ == "__main__":
+    raw_data_string = "AAAAABBBCCDDDDDD"
+    compressed_output = compress_string(raw_data_string)
+    
+    print(f"📄 Original Data Stream  : {raw_data_string} (Length: {len(raw_data_string)})")
+    print(f"🗜️ Compressed Output Code : {compressed_output} (Length: {len(compressed_output)})")
