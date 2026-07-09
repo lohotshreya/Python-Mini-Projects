@@ -1,0 +1,21 @@
+from PIL import Image
+
+def view_image_metadata():
+    # Dynamically generates a tiny 100x100 blank placeholder image so the script runs without errors
+    dummy_img = Image.new('RGB', (100, 100), color = 'blue')
+    dummy_img.save("sample_test.png")
+    
+    print("🖼️ Opening target artifact file stream: 'sample_test.png'...")
+    try:
+        with Image.open("sample_test.png") as img:
+            print("\n====================================")
+            print(f"📊 FILE FORMAT : {img.format}")
+            print(f"📐 DIMENSIONS  : {img.size[0]} x {img.size[1]} px")
+            print(f"🎨 COLOR MODE  : {img.mode}")
+            print("====================================")
+            print("✅ Structural metadata components cataloged cleanly!")
+    except Exception as e:
+        print(f"❌ Image data access validation failed: {e}")
+
+if __name__ == "__main__":
+    view_image_metadata()
