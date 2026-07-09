@@ -119,6 +119,22 @@ Deciphers jumbled scrambles of text arrays and instantly cross-checks possible c
 A command-line terminal clock tool managing uniform, cascading second countdown intervals with real-time screen display clearing.
 * **Concepts used:** Python line rewriting flags (`\r`), Dynamic mathematical breakdowns (`divmod()`), Blocking loops
 
+### 2️⃣9️⃣ Image Metadata Viewer (Exif Reader)
+Reads an image asset container from a folder and maps internal attributes like encoding format, resolution scale, and color spaces.
+* **Concepts used:** Python Image Library (`Pillow`), Asset stream unpacking, Binary attribute scanning
+
+### 3️⃣0️⃣ Text File Compressor
+Emulates lossless run-length file data optimization structures by mapping duplicate arrays into mathematical tokens.
+* **Concepts used:** Run-length string evaluations, Array caching indices, Value tracking
+
+### 3️⃣1️⃣ Random Joke Displayer
+Pulls real-time programming jokes directly from a secure cloud platform via an open API framework.
+* **Concepts used:** Data parsing loops, Endpoint parameters filtering, Error-resilient parsing
+
+### 3️⃣2️⃣ Directory Tree Visualizer
+Constructs a beautiful, structured text layout diagram mapping out complex directory system loops.
+* **Concepts used:** System file navigation modules (`os`), Recursive call trees, String branching arrays
+
 ---
 
 ## 🎯 Purpose
@@ -132,6 +148,6 @@ A command-line terminal clock tool managing uniform, cascading second countdown 
 * **Built-in Standard Libraries:** `random`, `time`, `json`, `csv`, `tkinter`, `os`, `re`, `smtplib`, `ssl`, `collections`, `itertools`
 * **External Dependencies:** `requests`, `qrcode`, `plyer`, `beautifulsoup4`, `pillow`
 
-To install all required external packages across the collection at once, run:
+To install all required external packages across the entire collection at once, run:
 ```bash
 pip install requests qrcode plyer beautifulsoup4 pillow
