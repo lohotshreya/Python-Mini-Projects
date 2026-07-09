@@ -1,0 +1,27 @@
+import os
+
+def generate_directory_tree(target_path, structural_indent=""):
+    if not os.path.exists(target_path):
+        print("❌ Given target folder destination path is invalid.")
+        return
+        
+    # Isolate root directory components
+    file_elements = os.listdir(target_path)
+    
+    for idx, element in enumerate(file_elements):
+        element_full_path = os.path.join(target_path, element)
+        is_last_element = (idx == len(file_elements) - 1)
+        
+        # Define terminal display branch designators
+        branch_marker = "└── " if is_last_element else "├── "
+        print(f"{structural_indent}{branch_marker}{element}")
+        
+        # Recurse down inside sub-folders recursively if discovered
+        if os.path.isdir(element_full_path):
+            next_indent_level = structural_indent + ("    " if is_last_element else "│   ")
+            generate_directory_tree(element_full_path, next_indent_level)
+
+if __name__ == "__main__":
+    print(f"🌳 Mapping Local Workspace Structure Tree for execution path: '{os.getcwd()}'\n")
+    # Maps out up to two levels of the current working repository directory automatically
+    generate_directory_tree(".")
