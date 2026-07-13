@@ -135,6 +135,30 @@ Pulls real-time programming jokes directly from a secure cloud platform via an o
 Constructs a beautiful, structured text layout diagram mapping out complex directory system loops.
 * **Concepts used:** System file navigation modules (`os`), Recursive call trees, String branching arrays
 
+### 3️⃣3️⃣ Text-to-Speech Converter (TTS)
+Converts string structures into synthetic vocal narration files saved directly to the workspace.
+* **Concepts used:** External dependencies (`gTTS`), File stream generation, Binary writing IO
+
+### 3️⃣4️⃣ Dynamic Progress Bar Simulator
+Simulates a fluid terminal loading layout indicator bar on a single console line without cascading noise outputs.
+* **Concepts used:** Carriage return outputs (`\r`), Execution pauses (`time.sleep`), Screen flushing utilities
+
+### 3️⃣5️⃣ System Environment Variable Scanner
+Queries system components safely to gather basic diagnostic execution statistics.
+* **Concepts used:** Architecture scanning via `platform`, User profile mapping routines, Directory evaluations
+
+### 3️⃣6️⃣ Automated Dice Roller & Stat Aggregator
+Simulates rolling multi-sided dice instances thousands of times instantly, reporting overall statistics.
+* **Concepts used:** Large loop optimization tracks, Structural data counts, Probability math logic
+
+### 3️⃣7️⃣ File Extension Classifier
+Scans local directories to aggregate files based on their specific format classifications.
+* **Concepts used:** File split techniques (`os.path.splitext`), Array searching structures, Map counting loops
+
+### 3️⃣8️⃣ Simple Biorhythm / Day Counter
+Calculates precise timing deltas mapping how many days and execution cycles have passed between date frameworks.
+* **Concepts used:** `datetime` modules, String processing, Delta delta structural tracking
+
 ---
 
 ## 🎯 Purpose
@@ -145,9 +169,9 @@ Constructs a beautiful, structured text layout diagram mapping out complex direc
 
 ## 🚀 Tech Stack & Setup
 * **Language:** Python 3
-* **Built-in Standard Libraries:** `random`, `time`, `json`, `csv`, `tkinter`, `os`, `re`, `smtplib`, `ssl`, `collections`, `itertools`
-* **External Dependencies:** `requests`, `qrcode`, `plyer`, `beautifulsoup4`, `pillow`
+* **Built-in Standard Libraries:** `random`, `time`, `json`, `csv`, `tkinter`, `os`, `re`, `smtplib`, `ssl`, `collections`, `itertools`, `sys`, `platform`, `getpass`, `datetime`
+* **External Dependencies:** `requests`, `qrcode`, `plyer`, `beautifulsoup4`, `pillow`, `gTTS`
 
 To install all required external packages across the entire collection at once, run:
 ```bash
-pip install requests qrcode plyer beautifulsoup4 pillow
+pip install requests qrcode plyer beautifulsoup4 pillow gTTS
