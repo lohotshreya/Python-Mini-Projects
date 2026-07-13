@@ -1,0 +1,25 @@
+from datetime import datetime
+
+def calculate_time_delta():
+    # Pre-filled default safe string values to guarantee out-of-the-box operation without user prompt drops
+    default_mock_birthdate = "2000-01-01"
+    
+    print(f"📅 Running Date Calculation Engine Example (Target: {default_mock_birthdate})...")
+    
+    try:
+        parsed_target = datetime.strptime(default_mock_birthdate, "%Y-%m-%d")
+        current_moment = datetime.now()
+        
+        difference_delta = current_moment - parsed_target
+        total_days = difference_delta.days
+        
+        print("\n====================================")
+        print(f"📆 BASELINE POINT : {parsed_target.strftime('%B %d, %Y')}")
+        print(f"⏳ ELAPSED DAYS   : {total_days} total days passed")
+        print(f"🧮 APPROX YEARS   : {total_days / 365.25:.2f} target cycles")
+        print("====================================")
+    except Exception as e:
+        print(f"❌ Mathematical analysis runtime crash: {e}")
+
+if __name__ == "__main__":
+    calculate_time_delta()
