@@ -1,0 +1,21 @@
+import random
+
+def run_simulation_rolls():
+    total_rolls = 5000
+    # Instantiate counting maps
+    roll_distribution = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    
+    print(f"🎲 Rolling digital simulator matrix {total_rolls} times rapidly...")
+    
+    for _ in range(total_rolls):
+        outcome = random.randint(1, 6)
+        roll_distribution[outcome] += 1
+        
+    print("\n📊 --- Statistical Run Matrix Results ---")
+    for face, count in roll_distribution.items():
+        ratio_percentage = (count / total_rolls) * 100
+        print(f" Face [{face}]: {count} occurrences ({ratio_percentage:.2f}%)")
+    print("------------------------------------------")
+
+if __name__ == "__main__":
+    run_simulation_rolls()
