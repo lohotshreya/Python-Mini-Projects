@@ -1,0 +1,25 @@
+import os
+
+def classify_local_directory():
+    print(f"📂 Analyzing file type array distribution inside: '{os.getcwd()}'\n")
+    
+    extension_counter = {}
+    current_elements = os.listdir(".")
+    
+    for item in current_elements:
+        if os.path.isfile(item):
+            # Isolate extensions from base string text layouts
+            _, ext = os.path.splitext(item)
+            ext = ext.lower() if ext else "No Extension"
+            
+            extension_counter[ext] = extension_counter.get(ext, 0) + 1
+            
+    if not extension_counter:
+        print("Empty file array detected.")
+        return
+        
+    for file_type, total in extension_counter.items():
+        print(f" 📂 Type [{file_type}]: {total} file(s) mapped.")
+
+if __name__ == "__main__":
+    classify_local_directory()
