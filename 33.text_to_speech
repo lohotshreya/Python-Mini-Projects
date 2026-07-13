@@ -1,0 +1,19 @@
+from gtts import gTTS
+import os
+
+def text_to_audio():
+    sample_text = "Python automation logic executed successfully."
+    output_filename = "speech_output.mp3"
+    
+    print(f"🎙️ Synthesizing target string text layout: '{sample_text}'...")
+    try:
+        # Generate speech engine object container
+        tts = gTTS(text=sample_text, lang='en')
+        tts.save(output_filename)
+        
+        print(f"✅ Audio file created successfully: '{output_filename}' in current workspace.")
+    except Exception as e:
+        print(f"❌ Audio compilation failed: {e}")
+
+if __name__ == "__main__":
+    text_to_audio()
