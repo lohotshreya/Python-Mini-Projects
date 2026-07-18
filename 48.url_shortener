@@ -1,0 +1,29 @@
+import random
+import string
+
+class URLShortener:
+    def __init__(self):
+        self.url_database = {}
+
+    def shorten_url(self, long_url):
+        # Generate an entirely unique random alphanumeric string key token
+        token_key = "".join(random.choices(string.ascii_letters + string.digits, k=6))
+        short_url = f"short.ly/{token_key}"
+        
+        # Save positional mapping references to internal data store
+        self.url_database[short_url] = long_url
+        return short_url
+
+    def get_original_url(self, short_url):
+        return self.url_database.get(short_url, "❌ Link reference token index not found.")
+
+if __name__ == "__main__":
+    engine = URLShortener()
+    target_link = "https://www.python.org/downloads/source/package-manifest"
+    
+    shortened = engine.shorten_url(target_link)
+    recovered = engine.get_original_url(shortened)
+    
+    print(f"🔗 Base Destination URL: {target_link}")
+    print(f"✂️ Compressed URL Entry : {shortened}")
+    print(f"🔄 Destination Redirect : {recovered}")
