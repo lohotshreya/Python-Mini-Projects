@@ -1,0 +1,13 @@
+import re
+
+def strip_html_tags(raw_html):
+    # Matches any characters inside angle brackets `<...>`
+    clean_pattern = re.compile(r'<[^>]+>')
+    return clean_pattern.sub('', raw_html)
+
+if __name__ == "__main__":
+    mock_html_data = "<div><h1>Main Title</h1><p>Welcome to the <strong>Python</strong> environment.</p></div>"
+    
+    print(f"🌐 Raw HTML Document String: {mock_html_data}")
+    clean_text = strip_html_tags(mock_html_data)
+    print(f"📄 Stripped Plaintext Result: {clean_text.strip()}")
