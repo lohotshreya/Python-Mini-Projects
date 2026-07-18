@@ -1,0 +1,14 @@
+def rgb_to_hex(r, g, b):
+    # Ensure color spectrum constraints stay within 0-255 boundaries
+    r = max(0, min(255, r))
+    g = max(0, min(255, g))
+    b = max(0, min(255, b))
+    
+    # Use hex formatting string substitution logic
+    return f"#{r:02X}{g:02X}{b:02X}"
+
+if __name__ == "__main__":
+    # Test cases: Tomato red, pure green, deep blue
+    print(f"🎨 RGB(255, 99, 71)   ➡️ Hex Code: {rgb_to_hex(255, 99, 71)}")
+    print(f"🎨 RGB(0, 200, 0)     ➡️ Hex Code: {rgb_to_hex(0, 200, 0)}")
+    print(f"🎨 RGB(30, 144, 255)  ➡️ Hex Code: {rgb_to_hex(30, 144, 255)}")
