@@ -1,0 +1,30 @@
+import random
+
+def play_lizard_spock():
+    options = ["rock", "paper", "scissors", "lizard", "spock"]
+    
+    # Win conditions mapping key -> list of what key beats
+    rules = {
+        "rock": ["scissors", "lizard"],
+        "paper": ["rock", "spock"],
+        "scissors": ["paper", "lizard"],
+        "lizard": ["spock", "paper"],
+        "spock": ["scissors", "rock"]
+    }
+    
+    print("🖖 Welcome to Rock Paper Scissors Lizard Spock!")
+    user_choice = "spock" # Self-contained choice simulation
+    computer_choice = random.choice(options)
+    
+    print(f"👤 Player chose: {user_choice}")
+    print(f"🤖 Computer chose: {computer_choice}")
+    
+    if user_choice == computer_choice:
+        print("🤝 It's a tie!")
+    elif computer_choice in rules[user_choice]:
+        print("🎉 Player Wins!")
+    else:
+        print("💻 Computer Wins!")
+
+if __name__ == "__main__":
+    play_lizard_spock()
