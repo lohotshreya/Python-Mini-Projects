@@ -1,0 +1,13 @@
+def check_leap_year(year):
+    # A year is a leap year if divisible by 4, but not by 100 unless also divisible by 400
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    return False
+
+if __name__ == "__main__":
+    test_years = [2000, 2024, 2026, 2100]
+    
+    print("📅 Evaluating calendar division matrices:")
+    for yr in test_years:
+        status = "Leap Year 🌟" if check_leap_year(yr) else "Standard Year 📝"
+        print(f" -> Year {yr}: Classified as a {status}")
