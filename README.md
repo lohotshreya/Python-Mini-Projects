@@ -159,6 +159,50 @@ Scans local directories to aggregate files based on their specific format classi
 Calculates precise timing deltas mapping how many days and execution cycles have passed between date frameworks.
 * **Concepts used:** `datetime` modules, String processing, Delta delta structural tracking
 
+### 3️⃣9️⃣ Rock Paper Scissors Lizard Spock
+An expanded framework version of the classic game utilizing mapped structural relational rules.
+* **Concepts used:** Dictionary condition mapping, advanced decision trees, random choice handling
+
+### 4️⃣0️⃣ Custom Password Masker & Obfuscator
+Captures secret terminal inputs securely while suppressing terminal text printing.
+* **Concepts used:** Stream suppression operations via standard `getpass`, safe text handling
+
+### 4️⃣1️⃣ HTML Tag Stripper
+Cleans out data markup trees from text blocks by targeting tag patterns using string matching.
+* **Concepts used:** Regular expressions (`re.compile`), text data substitutions, regex parsing
+
+### 4️⃣2️⃣ Simple Math Flashcard Generator
+Produces random mental math arithmetic challenges automatically evaluating numerical solution balances.
+* **Concepts used:** `random` selector matrices, condition validation, score calculation
+
+### 4️⃣3️⃣ RGB to Hex Color Converter
+Converts raw standard color channels into precise alphanumeric hex strings.
+* **Concepts used:** String numeric base formatting (`:02X`), numeric restriction capping, boundary handling
+
+### 4️⃣4️⃣ Leap Year Checker
+Evaluates calendar structures using precise sequential division logic.
+* **Concepts used:** Modulo evaluation rules (`%`), conditional logic stacking, Boolean parsing
+
+### 4️⃣5️⃣ Text Alignment & Justifier
+Pads text data lines horizontally to create uniform block justifications on a fixed console column boundary.
+* **Concepts used:** Native layout configurations (`ljust()`, `rjust()`, `center()`), grid width arithmetic
+
+### 4️⃣6️⃣ LeetSpeak Password Scrambler
+Transforms plain standard phrases into structurally obscured variation schemes for cryptography exploration.
+* **Concepts used:** Text iteration, key-value mappings dictionary scanning, string mutation
+
+### 4️⃣7️⃣ Dynamic Terminal Clock
+Maintains a dynamic digital timer outputting updated timing stamps on a locked console row line.
+* **Concepts used:** Dynamic system formatting updates (`time.strftime`), streaming buffers override techniques
+
+### 4️⃣8️⃣ Simple URL Shortener Simulator
+Generates compact link token paths tracking historical target redirects in runtime database maps.
+* **Concepts used:** Relational mappings database mockups, text sequence tokens (`string.ascii_letters`), algorithms
+
+### 4️⃣9️⃣ Factorial Calculator
+Processes complex cumulative numeric factor logic paths comparing loops versus memory stacks.
+* **Concepts used:** Stacking function layers (Recursion), loop math engines, error limits parsing
+
 ---
 
 ## 🎯 Purpose
@@ -169,7 +213,7 @@ Calculates precise timing deltas mapping how many days and execution cycles have
 
 ## 🚀 Tech Stack & Setup
 * **Language:** Python 3
-* **Built-in Standard Libraries:** `random`, `time`, `json`, `csv`, `tkinter`, `os`, `re`, `smtplib`, `ssl`, `collections`, `itertools`, `sys`, `platform`, `getpass`, `datetime`
+* **Built-in Standard Libraries:** `random`, `time`, `json`, `csv`, `tkinter`, `os`, `re`, `smtplib`, `ssl`, `collections`, `itertools`, `sys`, `platform`, `getpass`, `datetime`, `string`
 * **External Dependencies:** `requests`, `qrcode`, `plyer`, `beautifulsoup4`, `pillow`, `gTTS`
 
 To install all required external packages across the entire collection at once, run:
