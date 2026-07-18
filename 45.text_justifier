@@ -1,0 +1,11 @@
+def justify_text_demo():
+    message_snippet = "Python Core Engine Layout"
+    width_limit = 40
+    
+    print(f"📏 Framing target string across a {width_limit}-character grid column:\n")
+    print(f"Left Align  : |{message_snippet.ljust(width_limit)}|")
+    print(f"Center Align: |{message_snippet.center(width_limit)}|")
+    print(f"Right Align : |{message_snippet.rjust(width_limit)}|")
+
+if __name__ == "__main__":
+    justify_text_demo()
