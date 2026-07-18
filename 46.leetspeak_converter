@@ -1,0 +1,20 @@
+def convert_to_leetspeak(input_text):
+    # Mapping definitions for character substitution matrices
+    leet_dictionary = {
+        'a': '4', 'A': '4',
+        'e': '3', 'E': '3',
+        'i': '1', 'I': '1',
+        'o': '0', 'O': '0',
+        't': '7', 'T': '7',
+        's': '5', 'S': '5'
+    }
+    
+    result_array = [leet_dictionary.get(char, char) for char in input_text]
+    return "".join(result_array)
+
+if __name__ == "__main__":
+    raw_phrase = "SecurePythonScripting2026"
+    obfuscated_output = convert_to_leetspeak(raw_phrase)
+    
+    print(f"🔓 Plaintext Phrase : {raw_phrase}")
+    print(f"🔒 LeetSpeak Variant: {obfuscated_output}")
