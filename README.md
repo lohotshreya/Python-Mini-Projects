@@ -216,6 +216,4 @@ Processes complex cumulative numeric factor logic paths comparing loops versus m
 * **Built-in Standard Libraries:** `random`, `time`, `json`, `csv`, `tkinter`, `os`, `re`, `smtplib`, `ssl`, `collections`, `itertools`, `sys`, `platform`, `getpass`, `datetime`, `string`
 * **External Dependencies:** `requests`, `qrcode`, `plyer`, `beautifulsoup4`, `pillow`, `gTTS`
 
-To install all required external packages across the entire collection at once, run:
-```bash
-pip install requests qrcode plyer beautifulsoup4 pillow gTTS
+
