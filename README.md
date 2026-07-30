@@ -203,6 +203,18 @@ Generates compact link token paths tracking historical target redirects in runti
 Processes complex cumulative numeric factor logic paths comparing loops versus memory stacks.
 * **Concepts used:** Stacking function layers (Recursion), loop math engines, error limits parsing
 
+### 5️⃣0️⃣ Prime Number Checker & Generator
+Evaluates primality for numbers and extracts prime sequences within target boundaries.
+* **Concepts used:** Trial division algorithm, modulo arithmetic (`%`), `all()` filtering
+
+### 5️⃣1️⃣ Matrix Transposer
+Swaps rows and columns of 2D data arrays using clean functional list manipulation techniques.
+* **Concepts used:** Nested lists, list comprehensions, `zip()` unpacking
+
+### 5️⃣2️⃣ Sound Frequency Generator
+Triggers low-level system audio signals directly through the terminal console output.
+* **Concepts used:** System stdout stream flushing, ASCII bell characters (`\a`), timed audio loops
+
 ---
 
 ## 🎯 Purpose
