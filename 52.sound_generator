@@ -1,0 +1,14 @@
+import sys
+import time
+
+def play_terminal_beep(repeats=3):
+    print("🔊 Triggering system sound frequencies...")
+    for i in range(repeats):
+        # Triggers standard ASCII bell character (\a) on standard outputs
+        sys.stdout.write(f"\a Pulse {i + 1}/{repeats}\n")
+        sys.stdout.flush()
+        time.sleep(0.5)
+    print("✅ Frequency sequence complete!")
+
+if __name__ == "__main__":
+    play_terminal_beep()
