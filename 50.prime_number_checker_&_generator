@@ -1,0 +1,17 @@
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def generate_primes_up_to(limit):
+    return [num for num in range(2, limit + 1) if is_prime(num)]
+
+if __name__ == "__main__":
+    target = 29
+    upper_bound = 50
+    
+    print(f"🔢 Testing if {target} is prime: {'Yes ✅' if is_prime(target) else 'No ❌'}")
+    print(f"📋 Prime numbers up to {upper_bound}: {generate_primes_up_to(upper_bound)}")
