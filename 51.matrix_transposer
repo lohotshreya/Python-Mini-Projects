@@ -1,0 +1,20 @@
+def transpose_matrix(matrix):
+    # Swaps rows and columns using zip and list comprehension
+    return [list(row) for row in zip(*matrix)]
+
+def print_matrix(matrix, label):
+    print(f"\n{label}:")
+    for row in matrix:
+        print(f"  {row}")
+
+if __name__ == "__main__":
+    original = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+    
+    transposed = transpose_matrix(original)
+    
+    print_matrix(original, "📐 Original Matrix")
+    print_matrix(transposed, "🔄 Transposed Matrix")
