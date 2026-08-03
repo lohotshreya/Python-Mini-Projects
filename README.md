@@ -1,6 +1,3 @@
-# 🐍 Python Mini Projects
-
-A collection of beginner-friendly Python mini projects built to strengthen core programming concepts through hands-on practice. These projects focus on logic building, user interaction, and clean code structure — perfect for beginners and early-stage learners.
 
 ---
 
